@@ -1,0 +1,56 @@
+# Python
+.venv/
+venv/
+__pycache__/
+*.py[cod]
+.pytest_cache/
+.mypy_cache/
+.ruff_cache/
+
+# Node / Vite
+node_modules/
+dist/
+.vite/
+
+# Secrets and local configuration
+.env
+.env.*
+!.env.example
+*.pem
+*.key
+
+# Local databases and database journals
+*.db
+*.sqlite
+*.sqlite3
+*.db-wal
+*.db-shm
+
+# Private imports and runtime incident media
+data/imports/
+data/uploads/
+data/incidents/
+uploads/
+scratch/backup*/
+backups/
+
+# Local files
+.DS_Store
+*.log
+
+# Local logs and debugging artifacts
+*.log
+scratch/
+
+# Local camera frames and face crops
+eye_roi.jpg
+face_crop_*.jpg
+face_with_glasses.jpg
+camera2_test_frame.jpg
+
+# Generated indexes
+rag_index/
+
+# Large local model files
+weights/
+*.pt

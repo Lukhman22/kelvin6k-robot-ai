@@ -1,0 +1,40 @@
+# Core config
+python-dotenv==1.0.1
+
+# Text-to-speech (offline default + optional cloud)
+pyttsx3==2.90
+elevenlabs==0.2.27
+
+# Microphone capture + local speech-to-text
+sounddevice==0.4.7
+faster-whisper==1.0.3
+
+# Computer vision (camera, layer/wall/quality analysis, dashboard)
+# NOTE: pinned below 5.x -- the OpenCV 5.0 wheel reports
+# "DSHOW: backend is generally available but can't be used to capture by index",
+# which breaks DirectShow capture for external USB cameras on Windows.
+opencv-python>=4.10,<5
+numpy>=2.0,<3.0
+ultralytics>=8.0.0
+
+# Windows only, optional but recommended: reads DirectShow camera NAMES and
+# supported formats, so the external USB camera can be selected by name
+# (CAMERA_NAME_HINT) instead of a guessed index.
+pygrabber>=0.2; sys_platform == "win32"
+
+# Conversational AI (voice Q&A + assistant tool calling + RAG embeddings)
+google-genai>=2.0.0,<3.0.0
+
+# RAG: PDF ingestion (text/markdown need no extra dependency).
+# The vector store and lexical fallback are pure-Python -- no vector DB needed.
+pypdf>=4.0.0
+
+# Optional alternative AI backend (used by check_api_key.py / agent/anthropic_qa.py)
+anthropic>=1.0.0,<2.0.0
+
+# Web API for the React dashboard (api/server.py, run_api.py)
+fastapi>=0.110,<1.0
+uvicorn[standard]>=0.27,<1.0
+python-multipart>=0.0.9
+# Optional: enables server-side /api/stt audio decoding (browser STT is default)
+soundfile>=0.12; python_version >= "3.9"

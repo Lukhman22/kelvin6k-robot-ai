@@ -1,0 +1,80 @@
+/* Dashboard header and status tiles. */
+
+.app-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 16px;
+  padding: 14px 18px;
+  margin-bottom: 16px;
+  background: linear-gradient(180deg, var(--panel), var(--panel-2));
+  border: 1px solid var(--border);
+  border-radius: var(--radius);
+}
+
+.brand { display: flex; align-items: center; gap: 14px; }
+
+.brand-mark {
+  position: relative;
+  width: 46px; height: 46px;
+  display: grid; place-items: center;
+  border-radius: 12px;
+  background: linear-gradient(145deg, #1c2735, #121821);
+  border: 1px solid rgba(86, 182, 255, 0.35);
+  color: var(--accent);
+  font-weight: 800; font-size: 15px; letter-spacing: 0.5px;
+}
+.brand-mark-ring {
+  position: absolute; inset: -3px;
+  border-radius: 14px;
+  border: 1px solid rgba(86, 182, 255, 0.25);
+  animation: brand-pulse 3s ease-in-out infinite;
+}
+@keyframes brand-pulse {
+  0%, 100% { opacity: 0.35; transform: scale(1); }
+  50% { opacity: 0.85; transform: scale(1.05); }
+}
+
+.brand h1 {
+  margin: 0;
+  font-size: 19px;
+  font-weight: 700;
+  letter-spacing: 2.2px;
+}
+.brand-sub { color: var(--muted); font-size: 11px; letter-spacing: 0.4px; }
+
+/* --- status tiles --- */
+.status-tiles { display: flex; gap: 10px; flex-wrap: wrap; }
+
+.status-tile {
+  min-width: 118px;
+  padding: 8px 12px;
+  border-radius: 8px;
+  background: var(--panel-2);
+  border: 1px solid var(--border);
+  display: flex; flex-direction: column; gap: 4px;
+  transition: border-color 0.25s ease;
+}
+.status-tile-label {
+  font-size: 9px; letter-spacing: 1px; text-transform: uppercase; color: var(--muted);
+}
+.status-tile-value {
+  display: flex; align-items: center; gap: 7px;
+  font-size: 13px; font-weight: 700; letter-spacing: 0.5px;
+}
+.status-tile-ok { border-color: rgba(74, 222, 128, 0.32); }
+.status-tile-ok .status-tile-value { color: var(--ok); }
+.status-tile-warn { border-color: rgba(251, 191, 36, 0.32); }
+.status-tile-warn .status-tile-value { color: var(--warn); }
+.status-tile-bad { border-color: rgba(248, 113, 113, 0.35); }
+.status-tile-bad .status-tile-value { color: var(--bad); }
+.status-tile-muted .status-tile-value { color: var(--muted); }
+
+.header-chips { display: flex; gap: 8px; flex-wrap: wrap; align-items: center; }
+
+@media (max-width: 1100px) {
+  .app-header { flex-direction: column; align-items: flex-start; }
+  .status-tiles { width: 100%; }
+  .status-tile { flex: 1; }
+}

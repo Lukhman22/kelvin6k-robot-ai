@@ -1,0 +1,34 @@
+.voice-level {
+  display: flex;
+  align-items: flex-end;
+  gap: 3px;
+  height: 46px;
+  padding: 6px 10px;
+  background: #0d1116;
+  border: 1px solid rgba(255, 255, 255, 0.08);
+  border-radius: 6px;
+}
+
+.voice-level-active {
+  border-color: rgba(90, 150, 240, 0.35);
+}
+
+.voice-bar {
+  flex: 1 1 0;
+  min-width: 2px;
+  height: 6%;
+  background: #33414f;
+  border-radius: 2px;
+  /* Fast enough to track speech, slow enough not to flicker. */
+  transition: height 60ms linear, background-color 120ms linear;
+}
+
+.voice-bar-hot {
+  background: linear-gradient(180deg, #6fe3a8, #2f8f5f);
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .voice-bar {
+    transition: none;
+  }
+}

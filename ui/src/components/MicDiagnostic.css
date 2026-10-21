@@ -1,0 +1,208 @@
+.mic-diag {
+  margin: 12px 0;
+  padding: 12px 14px;
+  background: rgba(255, 255, 255, 0.03);
+  border: 1px solid rgba(255, 255, 255, 0.09);
+  border-radius: 6px;
+}
+
+.mic-diag-head {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: baseline;
+  gap: 10px;
+  margin-bottom: 10px;
+}
+
+.mic-diag-head h3 {
+  margin: 0;
+  font-size: 12px;
+  font-weight: 600;
+  letter-spacing: 0.1em;
+  color: #cfd8e3;
+}
+
+.mic-diag-sub {
+  font-size: 11px;
+  color: #6f7987;
+}
+
+.mic-diag-row {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  margin-bottom: 10px;
+}
+
+.mic-diag-label {
+  flex: 0 0 auto;
+  font-size: 11px;
+  letter-spacing: 0.08em;
+  color: #7d8794;
+}
+
+.mic-diag-select {
+  flex: 1 1 auto;
+  min-width: 0;
+  padding: 6px 8px;
+  font-size: 12px;
+  color: #dfe5ec;
+  background: #12171d;
+  border: 1px solid rgba(255, 255, 255, 0.14);
+  border-radius: 4px;
+}
+
+.mic-diag-actions {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+  margin-bottom: 10px;
+}
+
+.mic-diag-btn {
+  padding: 6px 12px;
+  font-size: 11px;
+  letter-spacing: 0.07em;
+  color: #cfd8e3;
+  background: rgba(255, 255, 255, 0.06);
+  border: 1px solid rgba(255, 255, 255, 0.16);
+  border-radius: 4px;
+  cursor: pointer;
+}
+
+.mic-diag-btn:hover:not(:disabled) {
+  background: rgba(255, 255, 255, 0.12);
+}
+
+.mic-diag-btn:disabled {
+  opacity: 0.45;
+  cursor: not-allowed;
+}
+
+.mic-diag-btn-primary {
+  color: #cfe3ff;
+  background: rgba(70, 130, 220, 0.16);
+  border-color: rgba(90, 150, 240, 0.5);
+}
+
+.mic-diag-btn-primary:hover:not(:disabled) {
+  background: rgba(70, 130, 220, 0.3);
+}
+
+.mic-diag-note {
+  margin: 8px 0 0;
+  font-size: 11px;
+  line-height: 1.6;
+  color: #9aa4b1;
+}
+
+.mic-diag-note ol {
+  margin: 6px 0 0;
+  padding-left: 18px;
+}
+
+.mic-diag-note li {
+  margin-bottom: 4px;
+}
+
+.mic-diag-warn {
+  color: #f0b775;
+}
+
+.mic-diag-ok {
+  color: #7fd39b;
+}
+
+/* --- live meter --- */
+.mic-diag-live {
+  margin-top: 10px;
+}
+
+.mic-diag-live-head {
+  display: flex;
+  justify-content: space-between;
+  margin-bottom: 4px;
+}
+
+.mic-diag-live-value {
+  font-size: 11px;
+  color: #cfd8e3;
+}
+
+.mic-diag-bar {
+  height: 10px;
+  overflow: hidden;
+  background: #0d1116;
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  border-radius: 5px;
+}
+
+.mic-diag-fill {
+  height: 100%;
+  background: linear-gradient(90deg, #2f8f5f, #4fd18b);
+  transition: width 80ms linear;
+}
+
+.mic-diag-fill-low {
+  background: linear-gradient(90deg, #6a5a2f, #c9a24a);
+}
+
+.mic-diag-info {
+  margin: 8px 0 0;
+  padding: 8px 10px;
+  overflow-x: auto;
+  font-family: Consolas, "Courier New", monospace;
+  font-size: 11px;
+  line-height: 1.6;
+  color: #9aa4b1;
+  background: #0d1116;
+  border: 1px solid rgba(255, 255, 255, 0.08);
+  border-radius: 4px;
+}
+
+/* --- results table --- */
+.mic-diag-results {
+  margin-top: 12px;
+  overflow-x: auto;
+}
+
+.mic-diag-results table {
+  width: 100%;
+  border-collapse: collapse;
+  font-size: 11px;
+}
+
+.mic-diag-results th,
+.mic-diag-results td {
+  padding: 6px 8px;
+  text-align: left;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.07);
+}
+
+.mic-diag-results th {
+  font-weight: 600;
+  letter-spacing: 0.06em;
+  color: #7d8794;
+  white-space: nowrap;
+}
+
+.mic-diag-results td {
+  color: #b9c2cd;
+}
+
+.mic-diag-verdict {
+  font-weight: 600;
+  white-space: nowrap;
+}
+
+.verdict-audio .mic-diag-verdict {
+  color: #4fd18b;
+}
+
+.verdict-silent .mic-diag-verdict {
+  color: #f0b775;
+}
+
+.verdict-failed .mic-diag-verdict {
+  color: #e0736b;
+}
